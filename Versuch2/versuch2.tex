@@ -54,9 +54,20 @@
 \caption{Schaltbilder zum Schmitt-Trigger}
 \end{figure}
 \subsection{Dimensionierung}
+Grundlage der Dimensionierung stellt dar, dass die Transistoren nur eine gewisse Leistung abgeben können, bevor sie überhitzen, also eine obere Grenze für den Kollektor-Emitter-Strom haben. Die Widerstände $R\ix{C}$ sollten also angemessen groß sein, aber nicht zu groß, da der Basisstrom für $T_2$ zum Durchsteuern ausreichen muss. Des Weiteren muss $R\ix{B}$ groß sein, um den über diesen Weg verschwendeten Strom gering zu halten. Schließlich wurden folgende Bauelemente gewählt:
+\begin{table}[H]
+\caption{Spezifikationen der verwendeten Bauelemente ($^*$: fest verbaut, hier Nennwert)}
+\vspace{-1em}
+\begin{align*}
+\begin{array}{c|c|c|c|c|c}
+R\ix{E} & R\ix{C} & R\ix{B} & R\ix{K} & R_1^* & R_2^* \\ \hline
+\unit[99,2]{\Omega} & \unit[556]{\Omega} & \unit[9,94]{k\Omega} & \unit[5,61]{k\Omega} & \unit[5]{k\Omega} & \unit[10]{k\Omega}
+\end{array} 
+\end{align*}
+\end{table}
 \section{Durchführung}
 \subsection{Messgeräte}
-\subsection{Oszillogramme}
+Die Speisespannung und die verschiedenen Eingangs-Gleichspannungen lieferte das Stromversorgungsgerät \textsc{Tektronix PS 280}, Wechselsignale wurden mit dem Funktionsgenerator \textsc{Tektronix AFG 3022B} erzeugt. Gleichspannungen wurden mit dem Multimeter \textsc{VOLTCRAFTplus VC 920} gemessen, Wechselsignale mit dem Oszilloskop \textsc{Hameg HM1508-2} dargestellt.
 \section{Auswertung}
 \section{Anhang}
 Die originalen Messwert-Aufzeichnungen liegen bei.
