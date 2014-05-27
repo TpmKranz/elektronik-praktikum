@@ -53,7 +53,7 @@ Für die gezeigte Bandsperre war eine Resonanzfrequenz von $f\ix{r}\approx\unit[
 \begin{align*}
 U_-=\frac{\left(k-1\right)R\ix{g}}{\left(k-1\right)R\ix{g}+R\ix{g}}\cdot U\ix{a}=\left(1-\frac{1}{k}\right)\cdot U\ix{a}
 \end{align*}
-Für die Kopplungsfaktoren $k=1$ bzw. $k=2$ verschwindet oder halbiert sich die rückgekoppelte Ausgangsspannung gerade. Aus der Definition der Resonanzfrequenz $f\ix{r}=\left(2\pi R C\right)^{-1}$ und der Forderung, dass der Ausgang nicht zu hochohmig belastet werden kann, folgt die Wahl von $R$, $C$ und $R\ix{g}$.
+Für die Kopplungsfaktoren $k=1$ bzw. $k=2$ verschwindet oder halbiert sich die rückgekoppelte Ausgangsspannung gerade. Aus der Definition der Resonanzfrequenz $f\ix{r}=\left(2\pi R C\right)^{-1}$ und der Forderung, dass der Ausgang nicht zu hochohmig belastet werden kann, folgt die Wahl von $R$, $C$ und $R\ix{g}$. Zudem ist die Dimensionierung von $R$ und $C$ bereits aus dem Aufbau des Doppel-T-Filter für eine Resonanzfrequenz $f\ix{r}=\unit[10]{kHz}$ gegeben.
 \section{Durchführung}
 \subsection{Messgeräte}
 Für die Messungen an der Bandsperre wurde ausschließlich das Oszilloskop \textsc{Hameg HM1508-2} verwendet. Die Speisespannung lieferte das Strom-/Spannungsversorgungsgerät \textsc{Tektronix PS 280} und die Eingangssignale wurden mit dem Funktionsgenerator \textsc{Tektronix AFG 3022B} erzeugt.
@@ -63,21 +63,21 @@ Messaufgabe 11 forderte die Aufnahme von Oszillogrammen von Ein- und Ausgangsspa
 \centering
 \begin{subfigure}[b]{.41\textwidth}
 \includegraphics[width=\textwidth]{SCR00010.png}
-\subcaption{$f\approx \unit[9]{kHz}\lessapprox f\ix{r}$}
+\subcaption{$f\approx \unit[9]{kHz}\lessapprox f\ix{r}$} \label{img:os1}
 \end{subfigure}
 \begin{subfigure}[b]{.41\textwidth}
 \includegraphics[width=\textwidth]{SCR00011.png}
-\subcaption{$f\approx \unit[11]{kHz}\gtrapprox f\ix{r}$}
+\subcaption{$f\approx \unit[11]{kHz}\gtrapprox f\ix{r}$} \label{img:os2}
 \end{subfigure}
 \begin{subfigure}[b]{.41\textwidth}
 \includegraphics[width=\textwidth]{SCR00013.png}
-\subcaption{$f\approx \unit[3]{kHz}\lessapprox \frac{f\ix{r}}{3}$}
+\subcaption{$f\approx \unit[3]{kHz}\lessapprox \frac{f\ix{r}}{3}$} \label{img:os3}
 \end{subfigure}
 \begin{subfigure}[b]{.41\textwidth}
 \includegraphics[width=\textwidth]{SCR00012.png}
-\subcaption{$f\approx \unit[3,5]{kHz}\gtrapprox \frac{f\ix{r}}{3}$}
+\subcaption{$f\approx \unit[3,5]{kHz}\gtrapprox \frac{f\ix{r}}{3}$} \label{img:os4}
 \end{subfigure}
-\caption{Oszillogramme zur Messaufgabe 11, Eingang: rechteckförmiges Signal}
+\caption{Oszillogramme zur Messaufgabe 11, Eingang: rechteckförmiges Signal} \label{img:gesamt}
 \end{figure}
 \subsection{Messwerte}
 Weiterhin wurden die Frequenzgänge der Phasenverschiebung und der Übertragungsfunktion bei Gegenkopplungen $k=1$ und $k\approx2$ aufgenommen.
@@ -85,7 +85,7 @@ Weiterhin wurden die Frequenzgänge der Phasenverschiebung und der Übertragungs
 \centering
 \begin{subfigure}[b]{\textwidth}
 \includegraphics[width=\textwidth]{sfg.pdf}
-\subcaption{Amplitudenfrequenzgänge}
+\subcaption{Amplitudenfrequenzgänge} \label{img:sfg}
 \end{subfigure}
 \begin{subfigure}[b]{\textwidth}
 \includegraphics[width=\textwidth]{pfg.pdf}
@@ -94,7 +94,17 @@ Weiterhin wurden die Frequenzgänge der Phasenverschiebung und der Übertragungs
 \caption{Diagramme der Messwerte}
 \end{figure}
 \section{Auswertung}
-
+\subsection{Versuchsaufgabe 10}
+Die Güte der Schaltungen kann aus \ref{img:sfg} bestimmt werden, indem man die normierten Kreisfrequenzen $\Omega\ix{min}$ und $\Omega\ix{max}$ abliest, bei denen die normierte Übertragungsfunktion den Wert $\frac{1}{\sqrt{2}}$ annimmt. Für die Schaltung mit der Gegenkopplung $k=1$ ergibt sich somit: 
+\begin{align*}
+Q_1=B^{-1}=\frac{1}{\Omega\ix{max}-\Omega\ix{min}}\approx\frac{1}{10^{0,3884}-10^{-0,3768}}=0,494
+\end{align*}
+und für $k\approx2$:
+\begin{align*}
+Q_2\approx\frac{1}{10^{0,0755}-10^{-0,06412}}=2,8616 \; .
+\end{align*}
+\subsection{Versuchsaufgabe 11}
+Aus \ref{img:gesamt} geht hervor, dass jeweils eine Oberschwingung des ansteuernden Rechtecksignals der Frequenz $f$ gedämpft wird. Somit wird an $K3$ (siehe \ref{img:band}) ein Signal ausgegeben, welches dem eingehenden ohne der gedämpften Oberschwingung entspricht. Der Phasensprung, der beim Vergleich von \ref{img:os1} und \ref{img:os2} deutlich wird, entsteht durch die charakteristische Phasenverschiebung der Bandsperre, die auf die gedämpfte Oberschwingung wirkt. In \ref{img:os3} und \ref{img:os4} ist dieser Phasensprung nicht all zu deutlich zu sehen, da die gedämpfte und phasenverschobene Oberschwingung ohnehin schon einen kleineren Anteil an dem Rechtecksignal hatte. 
 \section{Anhang}
 Die originalen Messwert-Aufzeichnungen liegen bei.
 \end{document}
