@@ -58,28 +58,43 @@ Für die Kopplungsfaktoren $k=1$ bzw. $k=2$ verschwindet oder halbiert sich die 
 \subsection{Messgeräte}
 Für die Messungen an der Bandsperre wurde ausschließlich das Oszilloskop \textsc{Hameg HM1508-2} verwendet. Die Speisespannung lieferte das Strom-/Spannungsversorgungsgerät \textsc{Tektronix PS 280} und die Eingangssignale wurden mit dem Funktionsgenerator \textsc{Tektronix AFG 3022B} erzeugt.
 \subsection{Oszillogramme}
-Messaufgabe 11 forderte die Aufnahme von Oszillogrammen von Ein- und Ausgangsspannungen bei rechteckförmigen Eingangssignalen mit Grundfrequenzen $f\lessapprox f\ix{r}$, $f\gtrapprox f\ix{r}$, $f\lessapprox \frac{f\ix{r}}{3}$ und $f\gtrapprox \frac{f\ix{r}}{3}$.
+Messaufgabe 11 forderte die Aufnahme von Oszillogrammen von Ein- und Ausgangsspannungen bei rechteckförmigen Eingangssignalen mit Grundfrequenzen $f\lessapprox f\ix{r}$, $f\gtrapprox f\ix{r}$, $f\lessapprox \frac{f\ix{r}}{3}$ und $f\gtrapprox \frac{f\ix{r}}{3}$. Dabei war die Gegenkopplung $k\approx2$.
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{.41\textwidth}
 \includegraphics[width=\textwidth]{SCR00010.png}
-\subcaption{$f\lessapprox f\ix{r}$}
+\subcaption{$f\approx \unit[9]{kHz}\lessapprox f\ix{r}$}
 \end{subfigure}
 \begin{subfigure}[b]{.41\textwidth}
 \includegraphics[width=\textwidth]{SCR00011.png}
-\subcaption{$f\gtrapprox f\ix{r}$}
-\end{subfigure}
-\begin{subfigure}[b]{.41\textwidth}
-\includegraphics[width=\textwidth]{SCR00012.png}
-\subcaption{$f\lessapprox \frac{f\ix{r}}{3}$}
+\subcaption{$f\approx \unit[11]{kHz}\gtrapprox f\ix{r}$}
 \end{subfigure}
 \begin{subfigure}[b]{.41\textwidth}
 \includegraphics[width=\textwidth]{SCR00013.png}
-\subcaption{$f\gtrapprox \frac{f\ix{r}}{3}$}
+\subcaption{$f\approx \unit[3]{kHz}\lessapprox \frac{f\ix{r}}{3}$}
+\end{subfigure}
+\begin{subfigure}[b]{.41\textwidth}
+\includegraphics[width=\textwidth]{SCR00012.png}
+\subcaption{$f\approx \unit[3,5]{kHz}\gtrapprox \frac{f\ix{r}}{3}$}
 \end{subfigure}
 \caption{Oszillogramme zur Messaufgabe 11, Eingang: rechteckförmiges Signal}
 \end{figure}
+\subsection{Messwerte}
+Weiterhin wurden die Frequenzgänge der Phasenverschiebung und der Übertragungsfunktion bei Gegenkopplungen $k=1$ und $k\approx2$ aufgenommen.
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{\textwidth}
+\includegraphics[width=\textwidth]{sfg.pdf}
+\subcaption{Amplitudenfrequenzgänge}
+\end{subfigure}
+\begin{subfigure}[b]{\textwidth}
+\includegraphics[width=\textwidth]{pfg.pdf}
+\subcaption{Phasenfrequenzgänge}
+\end{subfigure}
+\caption{Diagramme der Messwerte}
+\end{figure}
 \section{Auswertung}
+
 \section{Anhang}
 Die originalen Messwert-Aufzeichnungen liegen bei.
 \end{document}
