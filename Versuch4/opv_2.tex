@@ -49,14 +49,36 @@ Die gesamten Vorbereitungsaufgaben wurden bereits in der Arbeit "`\textbf{Protok
 \caption{Bandsperre mit OPV} \label{img:band}
 \end{figure}
 \subsection{Dimensionierung}
-Für die gezeigte Bandsperre war eine Resonanzfrequenz von $\approx\unit[10]{kHz}$ gefordert. Zusätzlich zu dieser, welche den nicht-invertierenden Eingang ansteuert, kommt ein invertierender Verstärker zum Einsatz. Die gesuchten Gegenkopplungsfaktoren ergeben sich aus dem Verhältnis der Spannungsteilerwiederstände $R\ix{g}$ und $ \left(k-1\right)R\ix{g}$. Damit folgt:
+Für die gezeigte Bandsperre war eine Resonanzfrequenz von $f\ix{r}\approx\unit[10]{kHz}$ gefordert. Zusätzlich zu dieser, welche den nicht-invertierenden Eingang ansteuert, kommt ein invertierender Verstärker zum Einsatz. Die gesuchten Gegenkopplungsfaktoren ergeben sich aus dem Verhältnis der Spannungsteilerwiederstände $R\ix{g}$ und $ \left(k-1\right)R\ix{g}$. Damit folgt:
 \begin{align*}
 U_-=\frac{\left(k-1\right)R\ix{g}}{\left(k-1\right)R\ix{g}+R\ix{g}}\cdot U\ix{a}=\left(1-\frac{1}{k}\right)\cdot U\ix{a}
 \end{align*}
 Für die Kopplungsfaktoren $k=1$ bzw. $k=2$ verschwindet oder halbiert sich die rückgekoppelte Ausgangsspannung gerade. Aus der Definition der Resonanzfrequenz $f\ix{r}=\left(2\pi R C\right)^{-1}$ und der Forderung, dass der Ausgang nicht zu hochohmig belastet werden kann, folgt die Wahl von $R$, $C$ und $R\ix{g}$.
 \section{Durchführung}
 \subsection{Messgeräte}
+Für die Messungen an der Bandsperre wurde ausschließlich das Oszilloskop \textsc{Hameg HM1508-2} verwendet. Die Speisespannung lieferte das Strom-/Spannungsversorgungsgerät \textsc{Tektronix PS 280} und die Eingangssignale wurden mit dem Funktionsgenerator \textsc{Tektronix AFG 3022B} erzeugt.
 \subsection{Oszillogramme}
+Messaufgabe 11 forderte die Aufnahme von Oszillogrammen von Ein- und Ausgangsspannungen bei rechteckförmigen Eingangssignalen mit Grundfrequenzen $f\lessapprox f\ix{r}$, $f\gtrapprox f\ix{r}$, $f\lessapprox \frac{f\ix{r}}{3}$ und $f\gtrapprox \frac{f\ix{r}}{3}$.
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{.41\textwidth}
+\includegraphics[width=\textwidth]{SCR00010.png}
+\subcaption{$f\lessapprox f\ix{r}$}
+\end{subfigure}
+\begin{subfigure}[b]{.41\textwidth}
+\includegraphics[width=\textwidth]{SCR00011.png}
+\subcaption{$f\gtrapprox f\ix{r}$}
+\end{subfigure}
+\begin{subfigure}[b]{.41\textwidth}
+\includegraphics[width=\textwidth]{SCR00012.png}
+\subcaption{$f\lessapprox \frac{f\ix{r}}{3}$}
+\end{subfigure}
+\begin{subfigure}[b]{.41\textwidth}
+\includegraphics[width=\textwidth]{SCR00013.png}
+\subcaption{$f\gtrapprox \frac{f\ix{r}}{3}$}
+\end{subfigure}
+\caption{Oszillogramme zur Messaufgabe 11, Eingang: rechteckförmiges Signal}
+\end{figure}
 \section{Auswertung}
 \section{Anhang}
 Die originalen Messwert-Aufzeichnungen liegen bei.
