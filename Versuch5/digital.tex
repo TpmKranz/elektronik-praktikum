@@ -43,7 +43,7 @@
 \section{Schaltskizzen}
 \begin{figure}[H]
 \centering
-%TODO Bild einfügen
+\includegraphics[width=0.666\textwidth]{NANDIC.png}
 \caption{IC SN 7400 bzw. SN 74HCT00} \label{img:ic}
 \end{figure}
 \section{Durchführung}
@@ -59,21 +59,56 @@ Die verwendete Versuchsplatine ist "`Logisches Gatter"'. Die Betriebsspannung un
 \subsection{Oszillogramme}
 \subsubsection{Versuchsaufgabe 1}
 \begin{figure}[H]
+\centering
 \begin{subfigure}[b]{0.48\textwidth}
 \includegraphics[width=\textwidth]{scr16.png}
-\caption{$f=\unit[1]{MHz}$}
+\caption{$f=\unit[1]{MHz}$} \label{img:osz1}
 \end{subfigure}
 \begin{subfigure}[b]{0.48\textwidth}
 \includegraphics[width=\textwidth]{scr17.png}
-\caption{$f=\unit[10]{MHz}$}
+\caption{$f=\unit[10]{MHz}$} \label{img:osz2}
 \end{subfigure}
 \caption{zeitsynchrone Ein- und Ausgangssignale (systemeigen, Rechteckimpuls)}
 \end{figure}
 \section{Auswertung}
 \subsection{Versuchsaufgabe 1}
-
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.666\textwidth]{aufg1.pdf}
+\caption{Ausgangssignal eines Gatters bei variierendem Eingangssignal}
+\end{figure}
+Im gezeigten Diagramm ist der Umbruch von High- zu Low-Pegel zu erahnen. Die verbotene Zone sollte jedoch keine Messwerte liefern (\unit[0,4\dots 2,4]{V}). \\
+Aus den Oszillogrammen \ref{img:osz1} und \ref{img:osz2} ergibt sich die Laufzeit zu
+\begin{align*}
+\tau=\frac{\tau\ix{HL}+\tau\ix{LH}}{2}=\frac{\unit[\left(1,47036-1,3963\right)]{10^{-7}s}+\unit[\left(100,29-4,634\right)]{10^{-10}s}}{2}=\unit[8,4858]{ns} \; .
+\end{align*}
 \subsection{Versuchsaufgabe 2}
+Da für ein einziges Gatter die Verlustleistung nicht messbar war, betrachten wir die über den gesamten IC abfallenden Leistung. Dafür wurde der eingehende Strom und die Speisespannung in Abhängigkeit vom Eingangssignaltakt gemessen. Während der Messung waren alle 4 Gatter frei, d.h. nicht beschaltet. Die gesuchte Leistung ist $P\ix{V}=\frac{P\ix{ges}}{4}$.
+\begin{table}[H]
+\centering
+\begin{tabular}{c||c|c|c|c}
+ IC & $U\ix{s}\unit{/V}$ & $I\ix{s}\unit{/mA}$ & $f\unit{/kHz}$ & $P\ix{V}\unit{/mW}$ \\ \hline \hline 
+SN7400 & 4,98 & 30,989 & 0 & 0,198\\ \cline{3-5}
+ &  & 31,02 & 1 & 0,1544 \\ \cline{3-5}
+ &  & 31,42 & 10000 & 0,1564 \\ \cline{1-5}
+SN74HCT00 & 4,98 & 36,38 & 0 & 0,1811 \\ \cline{3-5}
+ &  & 32,54 & 1 & 0,1621 \\ \cline{3-5}
+ &  & 35,334 & 10000 & 0,1759
+\end{tabular} 
+\end{table}
 \subsection{Versuchsaufgabe 3}
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+\includegraphics[width=\textwidth]{aufg3_1.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.48\textwidth}
+\includegraphics[width=\textwidth]{aufg3_2.pdf}
+\end{subfigure}
+\caption{Ausgangsspannung bei steigender Belastung (Vergleich der ICs)}
+\end{figure}
+Der Ausgangslastfaktor eines Gatters (fan-out) gibt an, wie viele, in ihrem Eingangslastfaktor (fan-in) gleichwertige, Gatter angeschlossen werden können, ohne dass das Ausgangssignal den High- bzw. Low-Bereich verlässt. In unserem Fall handelte es sich um ein NAND-Gatter - d.h. dass aus einem, auf beiden Eingängen anliegenden, High am Ausgang ein Low wird und umgekehrt. Der Low-Pegel ist $U\ix{L}\in \left[0\dots  \unit[0,4]{V}\right]$ und der High-Pegel $U\ix{H}\in \left[2,4\dots \unit[5]{V}\right]$. \\
+Für das Gatter des ICs SN7400 wird damit ersichtlich, dass dessen fan-out zwischen 1 und 3 liegen muss. Das Gatter aus dem SN74HCT00 besitzt den Messergebnissen zur Folge einen ähnlichen fan-out. Diese Ergebnisse stehen aber im Widerspruch zu den Annahmen, dass ein fan-out dieser TTL-Gatter etwa 10 betragen sollte. 
 \section{Anhang}
 Die originalen Messwert-Aufzeichnungen liegen bei.
 \end{document}
