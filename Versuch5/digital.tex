@@ -1,0 +1,53 @@
+\documentclass[numbers=noenddot,12pt,a4paper]{scrartcl}
+\usepackage[greek,ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{libertine}
+\usepackage{ziffer}
+\usepackage{graphicx}
+\usepackage{units}
+%\usepackage{wasysym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{esint}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage[font=small]{caption}
+\usepackage{subcaption}
+
+\renewcommand{\thefigure}{Abb. \arabic{figure}}
+
+\captionsetup[wrapfigure]{name=}
+\captionsetup[figure]{name=}
+\newcommand{\degree}{^\circ}
+\newcommand{\diff}{\textnormal{d}}
+\newcommand{\tenpo}[1]{\cdot 10^{#1}}
+\newcommand{\greek}[1]{\greektext#1\latintext}
+\newcommand{\ix}[1]{_\text{#1}}
+\newcommand{\imag}{\mathbf{i}}
+
+\title{Protokoll: Digitale Schaltungen}
+\author{Tom Kranz, Philipp Hacker}
+\date{\today}
+
+\begin{document}
+%\setcounter{page}{2}
+%\setcounter{section}{1}
+\maketitle
+\vspace*{\fill}
+\tableofcontents
+\vfill
+\newpage
+\section{Schaltskizzen}
+\section{Durchführung}
+\subsubsection{Versuchsaufgabe 1}
+Hierbei wurden die beide Eingänge eines NAND-Gatters mit einem Signal $U\ix{x}$ beschaltet. Zuerst wurde der Verlauf des Ausgangssignals $U\ix{y}$ bei den quasistatischen Variationen $U\ix{x}=0\rightarrow\unit[5]{V}$ und $U\ix{x}=5\rightarrow\unit[0]{V}$ mittels Multimetern gemessen Anschließend wurde für das Eingangssignal ein systemeigener Rechteckimpuls der Frequenz $1$ bzw. $\unit[10]{MHz}$ eingesetzt. Systemeigen bedeutet hierbei, dass ein Gatter zwischen ursprünglicher Spannungsquelle und Eingang des Messgatters geschaltet war. Der Rechteckimpuls hatte eine peak-to-peak-Spannung von $\unit[5]{V}$ mit einem offset von $\unit[2,5]{V}$. Ein- und Ausgangssignal wurden zeitsynchron oszillographiert.
+\subsubsection{Versuchsaufgabe 2}
+\subsection{Geräte} \label{sec:gerät}
+\subsection{Oszillogramme}
+\section{Auswertung}
+\section{Anhang}
+Die originalen Messwert-Aufzeichnungen liegen bei.
+\end{document}
