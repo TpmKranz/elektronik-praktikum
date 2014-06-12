@@ -43,7 +43,7 @@
 \vfill
 \newpage
 \section{Vorbereitung}
-\subsection{Siebensegmentanzeige}
+\subsection{Siebensegmentanzeige} \label{sec:sieben}
 Im Vorfeld des Aufbaus der Siebensegmentanzeige (siehe \ref{img:sieben}) waren durch die Verwendung von Karnaugh-Tafeln die logischen Funktionen der einzelnen Segmente aufzustellen.
 \begin{figure}[H]
 \begin{minipage}[htbp]{0.28\textwidth}
@@ -212,6 +212,7 @@ g=  x_3 \nicht{x_2}+ x_2 \nicht{x_3} + x_4 + x_2\nicht{x_1}
 
 \subsection{Schaltskizzen}
 \subsection{Kombinatorische Schaltungen}
+\vspace{-0.5cm}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{gleichheit.png}
@@ -221,18 +222,29 @@ g=  x_3 \nicht{x_2}+ x_2 \nicht{x_3} + x_4 + x_2\nicht{x_1}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\textwidth]{univibrator.png}
-\caption{Univibrator aus NAND-Gattern}
+\caption{Univibrator aus NAND-Gattern} \label{img:uni}
 \end{figure}
 \subsection{Dimensionierung}
+Im Vorfeld ist anzumerken, dass, falls nicht bereits schon integriert (Schaltbrett \textit{Kombinatorik}), die Betriebsspannungen aller ICs immer auf Massepotential durch einen $\unit[100]{nF}$ großen Keramikkondensator gepuffert wurden.
+\subsubsection{Kombinatorische Schaltungen}
+Die Dimensionierungen für die Versuche zur Siebensegmentanzeige und zum Test auf Äquivalenz erübrigten sich, da allein der korrekte Aufbau und die Bestimmung der logischen Funktionen die Aufgaben lösten.
+\subsubsection{Sequentielle Schaltungen}
+Da ein $\tau\approx\unit[10]{\mu s}$ gefordert war, dimensionierten wir $C=\unit[21,1]{nF}$ und $R=\unit[388,4]{\Omega}$, womit sich $\tau=\unit[8,60]{\mu s}$ oszillographisch messen ließ.
 \section{Durchführung}
+\subsection{Kombinatorische Schaltungen}
+Bevor die Siebensegmentanzeige aufgebaut werden konnte, wurden die logischen Funktionen in Folge der zugehörigen Karnaugh-Tafeln aufgestellt (siehe \ref{sec:sieben}). Schließlich wurden auf dem Schaltbrett \textit{Kombinatorik}, wie in \ref{img:anzeigefarbe} gezeigt, die Variablen durch NAND-Gatter mit bis zu 8 Eingängen an die LED-Siebensegmentanzeige in entsprechender Form weitergegeben. Im Anschluss konnten zusätzlich die Eingangsvariablen $x_1$ bis $x_4$ durch beliebige Stellen eines bereits integrierten, getakteten Schieberegisters ersetzt werden. \\
+Weiterhin wurden für einen Äquivalenztest (siehe \ref{tab:wahr}; auf Steckplatine) die Zeitverschiebungen von Eingangssignaländerung und Ausgang gemessen.
+\subsection{Sequentielle Schaltungen}
+Nach Aufbau des in \ref{img:uni} skizzierten Univibrators ($\tau\approx\unit[10]{\mu s}$), wurde über den Funktionsgenerator ein Spannungsimpuls mit $\unit[4]{V\ix{PP}}$, $\unit[2]{V}$ Offset und einem High-Gesamtdauerverhältnis von 8:10 generiert. Die Frequenzen waren 5 und $\unit[50]{kHz}$. Mittels Oszilloskop wurden Eingangspuls und Ausgangssignal ($Q$, $\nicht{Q}$) zeitsynchron aufgenommen.
 \subsection{Messgeräte}
+Die Betriebsspannung und die Eingangs-Gleichspannungen lieferte das Stromversorgungsgerät \textsc{Tektronix PS 280}, Pulssignale mit verschiedenen Tastverhältnissen wurden mit dem Funktionsgenerator \textsc{Tektronix AFG 3022B} erzeugt. Die Gleichspannungen wurden mit dem Multimeter \textsc{VOLTCRAFTplus VC 920} gemessen, Oszillogramme und Signalverläufe mit dem Oszilloskop \textsc{Hameg HM1508-2} erstellt bzw. betrachtet. Für die Versuche zu \textbf{Kombinatorischen Schaltungen} benutzten wir die Steckplatine "`Conrads"' und das Schaltbrett \textit{Kombinatorik}, mit insgesamt 18 Gattern des Typs SN 7420, 8 mal SN 7440 und 2 mal SN 7430. Die Versuche mit \textbf{Sequentiellen Schaltungen} wurden auf der selbigen Steckplatine realisiert.
 \subsection{Oszillogramme}
-\subsection{Kombinatorische Schaltungen, Aufgabe 1}
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.48\textwidth]{SCR00018.png}
-\end{figure}
-\subsection{Sequentielle Schaltungen, Aufgabe 3}
+%\subsection{Kombinatorische Schaltungen, Aufgabe 1}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=0.48\textwidth]{SCR00018.png}
+%\end{figure}
+\subsubsection{Sequentielle Schaltungen, Aufgabe 3}
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
@@ -243,8 +255,9 @@ g=  x_3 \nicht{x_2}+ x_2 \nicht{x_3} + x_4 + x_2\nicht{x_1}
 \includegraphics[width=\textwidth]{seq15khzqquer.png}
 \caption{$\nicht{Q}$}
 \end{subfigure}
-\caption{$f=\unit[5]{kHz}$}
+\caption{$f=\unit[5]{kHz}$} \label{img:5khz}
 \end{figure}
+In dieser Aufgabe galt es zu erkennen, das ein Univibrator den Zustand an $\nicht{Q}$ solange hält, wie durch die Dimensionierung $\tau=RC$ vorgegeben. Ist $\nicht{Q}$ auf Low, so ist $Q$ stets ein High. Die Entladung über $R$ (siehe \ref{img:uni}) lässt schließlich $\nicht{Q}$ von Low auf High umschalten, wodurch das Eingangssignal für $Q$ wiederum relevant wird. Für eine Frequenz von $\unit[5]{kHz}$ (\ref{img:5khz}) ist die Zeit zwischen den Pulsen des Eingangs größer als die Zeitkonstante $\tau$. Daher reagiert der Univibrator genau auf jeden der Übergänge des Eingangs von High auf Low.
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
@@ -255,15 +268,33 @@ g=  x_3 \nicht{x_2}+ x_2 \nicht{x_3} + x_4 + x_2\nicht{x_1}
 \includegraphics[width=\textwidth]{seq150khzqquer.png}
 \caption{$\nicht{Q}$}
 \end{subfigure}
-\caption{$f=\unit[50]{kHz}$}
+\caption{$f=\unit[50]{kHz}$} \label{img:50khz}
 \end{figure}
+In \ref{img:50khz} wird der Fall gezeigt, für den gerade die Zeit zwischen 2 oder mehreren Pulsen kleiner ist als $\tau$. Erkenntlich wird hier, dass $\nicht{Q}$ über den Zustandswechsel im Eingang hinweg seinen Zustand wahrt, nämlich genau für die Zeit $\tau$.
 \section{Auswertung}
-\subsection{Kombinatorische Schaltungen, Aufgabe 1}
+\subsection{Kombinatorische Schaltungen}
+\subsubsection{Aufgabe 1}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{komb1.pdf}
 \caption{Gleichheitstest; $U\ix{e}=H\rightarrow L$}
 \includegraphics[width=0.8\textwidth]{komb2.pdf}
+\end{figure}
+Für den Übergang $U\ix{e}=H\rightarrow L$ liegt das Ergebnis des Gleichheitstests nach
+\begin{align*}
+ \tau\ix{G}=t_2-t_1=\unit[\left(30,8495-0.88482\right)]{\cdot 10^{-9}s}=\unit[29,964]{ns}
+\end{align*}
+vor. Für den Fall $U\ix{e}=L\rightarrow H$ folgt
+\begin{align*}
+\tau\ix{G}^{\prime}=\unit[25,837]{ns} \;
+\end{align*}
+Insgesamt kann man die Unschaltzeit verallgemeinern zu $T=\frac{\tau\ix{G}+\tau\ix{G}^{\prime}}{2}=\unit[27,9]{ns} \;$.
+\subsubsection{Aufgabe 3}
+Die Schaltung zur Siebensegmentanzeige wurde mit Hilfe eines logischen, sequentiellen Schieberegisters, wie in \ref{img:anzeigefarbe} gezeigt, aufgebaut. Selbst bei minimalem Aufwand ist die Menge der Verbindungen groß, was keine Einsicht in die Schaltvorgänge zulässt.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{anzeigefarb.png}
+\caption{Aufbau mit getaktetem, sequentiellem Register} \label{img:anzeigefarbe}
 \end{figure}
 \section{Anhang}
 Die originalen Messwert-Aufzeichnungen liegen bei.
