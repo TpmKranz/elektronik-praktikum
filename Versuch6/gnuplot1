@@ -1,5 +1,6 @@
 set terminal svg size 1024,512 enhanced
-set format x "%.0s*10^%T"
+set format x "%.1e"
+#set format x "%.0s*10^{%T}"
 set ylabel "U in V"
 set xlabel "t in s"
 set grid
@@ -7,4 +8,5 @@ set key top left
 set output "komb1.svg"
 p "WAV00030.CSV" with lines  lt 11 lc 7 title "Einganssignal" , "WAV00031.CSV" with lines lc 6 lt 9 title "Ausgangssignal"
 set output "komb2.svg"
-p "WAV00032.CSV" using  (($1)-500e-6):($2) with lines lc 7 title "Ausgangssignal", "WAV00033.CSV" using (($1)-500e-6):($2) with lines lc 6 title "Eingangssignal"
+#p "WAV00032.CSV" with lines lc 7 title "Ausgangssignal", "WAV00033.CSV" with lines lc 6 title "Eingangssignal"
+p "WAV00032.CSV" using  (($1)-5e-4):($2) with lines lc 7 title "Ausgangssignal", "WAV00033.CSV" using (($1)-5e-4):($2) with lines lc 6 title "Eingangssignal"
